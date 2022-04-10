@@ -8,9 +8,21 @@
 
 <body>
   <script type="module">
-    // 引入 m1.js 模块内容
+    //1. 引入 m1.js 模块内容
     import * as m1 from './src/js/m1.js'
-    console.log(m1)
+    //import * as m2 from './src/js/m2.js'
+    //import * as m3 from './src/js/m3.js'
+    //m3.default.change()  //上面这种导入方式，使用时必须加 default
+    //2. 引入 m2.js 模块内容
+    import { school as gui, findJob } from './src/js/m2.js'
+    // 引入 m3.js 模块内容
+    //import { default as m3 } from './src/js/m3.js'
+
+    //3. 简便形式 - 只能针对默认暴露
+    import m3 from "./src/js/m3.js"
+
+    console.log(m3)
+    m3.change() //第三种方式引入时，m3 可以直接使用
   </script>
 </body>
 

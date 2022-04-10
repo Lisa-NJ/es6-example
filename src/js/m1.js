@@ -1,3 +1,5 @@
+// 分别暴露
+
 export let school = 'shang'
 
 export function teach() {
