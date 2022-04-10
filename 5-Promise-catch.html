@@ -15,6 +15,17 @@
         reject('出错了！')
       }, 1000)
     })
+
+    // 通过 then 的失败回调
+    // p.then(value => { }, reason => {
+    //   console.error(reason)
+    // })
+
+    // 通过 catch 方法来指定 失败 的回调
+    p.catch(reason => {
+      console.warn(reason)
+    })
+
   </script>
 </body>
 
