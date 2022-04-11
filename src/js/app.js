@@ -6,3 +6,5 @@ import m3 from "./m3.js"
 console.log(m1)
 console.log(gui, findJob)
 console.log(m3)
+
+m3.change()
