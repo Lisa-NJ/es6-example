@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Function</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background: #58a;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="ad"></div>
+  <script>
+    //R-1 2s after the click of div, it turns to 'pink'
+    //获取元素
+    let ad = document.getElementById('ad')
+    //绑定事件
+    ad.addEventListener("click", function () {
+      let self = this
+      //定时器
+      // setTimeout(function () {
+      //   // 缺省：this 指向 window, this.style 没有定义
+      //   //修改背景颜色 可以使用 div 来实现 或 使用 this
+      //   // 第一种：
+      //   //ad.style.background = 'pink'
+      //   // 第二种：
+      //   self.style.background = 'pink'
+      // }, 2000)
+
+      setTimeout(() => {
+        // 箭头函数 this 指向 声明时 所在作用域下的 this 的值
+        this.style.background = 'pink'
+      }, 2000)
+    })
+
+    //R-2 return items that are odd
+    // 原来的方式
+    const arr = [1, 6, 9, 10, 100, 25]
+    const result = arr.filter(function (item) {
+      if (item % 2 === 0) {
+        return true
+      } else {
+        return false
+      }
+    })
+    // 箭头函数的方式
+    const result1 = arr.filter(item => item % 2 === 0)
+
+  </script>
+</body>
+
+</html>
