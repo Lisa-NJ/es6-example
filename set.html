@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Set Practice</title>
+</head>
+
+<body>
+  <script>
+    let arr = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+    //1. 数组去重
+    let result = [...new Set(arr)] //使用扩展运算符转化为数组
+    console.log(result); //[1, 2, 3, 4, 5]
+
+    //2. 交集
+    let arr2 = [4, 5, 6, 3, 3, 4, 8, 9]
+    let result1 = result.filter(item => (new Set(arr2)).has(item))
+    console.log(result1);
+
+    //3. 并集
+    let resultAdd = [...(new Set([...arr, ...arr2]))]
+    console.log(resultAdd);
+
+    //4. 差集
+    //与交集处理流程类似
+
+  </script>
+</body>
+
+</html>
