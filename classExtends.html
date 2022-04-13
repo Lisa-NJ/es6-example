@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>class 继承</title>
+</head>
+
+<body>
+  <script>
+
+    class Phone {
+      constructor (brand, price) {
+        this.brand = brand
+        this.price = price
+      }
+
+      //父类的成员属性
+      call() {
+        console.log('make a call')
+      }
+    }
+
+    class SmartPhone extends Phone {
+      constructor (brand, price, color, size) {
+        super(brand, price)
+        this.color = color
+        this.size = size
+      }
+      play() {
+        console.log('can play');
+      }
+      //对父类方法重写
+      call() {
+        //不能调用父类同名方法
+        console.log('make a video call')
+      }
+    }
+
+    const chuizi = new SmartPhone('chui', 1000, 'black', '5.5')
+    chuizi.call()
+    chuizi.play()
+
+    console.log(chuizi);
+
+  </script>
+</body>
+
+</html>
